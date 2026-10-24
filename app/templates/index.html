@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Automated Deployment | Azure & Jenkins</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            max-width: 650px;
+            width: 100%;
+            padding: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .badge {
+            display: inline-block;
+            background: #10b981;
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+        p.subtitle {
+            color: #94a3b8;
+            font-size: 1rem;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+        .pipeline-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #0f172a;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 28px;
+            font-size: 0.85rem;
+            border: 1px solid #334155;
+        }
+        .flow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        .flow-step span.icon {
+            font-size: 1.25rem;
+        }
+        .flow-arrow {
+            color: #64748b;
+            font-weight: bold;
+        }
+        .grid-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            text-align: left;
+            margin-bottom: 24px;
+        }
+        .card {
+            background: #1e293b;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+        }
+        .card-label {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+        .card-value {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #f1f5f9;
+            word-break: break-all;
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #64748b;
+            border-top: 1px solid #334155;
+            padding-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="badge">● Continuous Deployment Active</div>
+        <h1>DevOps Automated Web App</h1>
+        <p class="subtitle">Provisioned with <strong>Terraform</strong> on <strong>Microsoft Azure</strong> & deployed continuously with <strong>Jenkins CI/CD</strong>.</p>
+        
+        <div class="pipeline-flow">
+            <div class="flow-step">
+                <span class="icon">🐙</span>
+                <strong>GitHub</strong>
+            </div>
+            <div class="flow-arrow">➔</div>
+            <div class="flow-step">
+                <span class="icon">⚙️</span>
+                <strong>Jenkins</strong>
+            </div>
+            <div class="flow-arrow">➔</div>
+            <div class="flow-step">
+                <span class="icon">🏗️</span>
+                <strong>Terraform</strong>
+            </div>
+            <div class="flow-arrow">➔</div>
+            <div class="flow-step">
+                <span class="icon">☁️</span>
+                <strong>Azure VM</strong>
+            </div>
+        </div>
+
+        <div class="grid-info">
+            <div class="card">
+                <div class="card-label">Server Hostname</div>
+                <div class="card-value">{{ hostname }}</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Target Environment</div>
+                <div class="card-value">{{ environment }}</div>
+            </div>
+            <div class="card">
+                <div class="card-label">Deployment Timestamp</div>
+                <div class="card-value">{{ server_time }}</div>
+            </div>
+            <div class="card">
+                <div class="card-label">App Health Check</div>
+                <div class="card-value" style="color: #10b981;">HTTP 200 OK</div>
+            </div>
+        </div>
+
+        <footer>
+            Automated CI/CD Pipeline • DevOps Course (24DC2006) • Karunya Institute of Technology and Sciences
+        </footer>
+    </div>
+</body>
+</html>

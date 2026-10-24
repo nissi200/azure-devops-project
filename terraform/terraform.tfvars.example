@@ -1,0 +1,9 @@
+resource_group_name = "rg-devops-webapp"
+location            = "eastus"
+vnet_name           = "vnet-devops"
+subnet_name         = "snet-devops-web"
+vm_name             = "vm-devops-server"
+vm_size             = "Standard_B1s"
+admin_username      = "azureuser"
+# Optional: if you have an existing SSH key pair, provide the public key path below:
+# ssh_public_key_path = "~/.ssh/id_rsa.pub"
